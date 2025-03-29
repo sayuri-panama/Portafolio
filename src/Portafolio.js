@@ -120,7 +120,17 @@ export default function Portfolio() {
       </Drawer>
 
       {/* Inicio */}
-      <Box id="inicio" sx={{ height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+      <Box
+        id="inicio"
+        sx={{
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "0 16px", // Añadimos un padding para evitar que el contenido toque los bordes en pantallas pequeñas
+        }}
+      >
         <Box
           sx={{
             width: "150px",
@@ -130,30 +140,69 @@ export default function Portfolio() {
             border: "4px solid white",
             boxShadow: "0px 4px 10px rgba(0,0,0,0.3)",
             mb: 2,
+            // Aquí añadimos un ajuste para tamaños móviles
+            '@media (max-width: 600px)': {
+              width: '120px',
+              height: '120px',
+            }
           }}
         >
-          <img src={profilePic} alt="Sayuri Verónica Panamá Segura" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <img
+            src={profilePic}
+            alt="Sayuri Verónica Panamá Segura"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
         </Box>
-        <Typography variant="h2" fontWeight="bold" sx={{ fontFamily: "Merriweather, serif" }}>
+        <Typography
+          variant="h2"
+          fontWeight="bold"
+          sx={{
+            fontFamily: "Merriweather, serif",
+            // Reducimos el tamaño de la fuente en dispositivos pequeños
+            '@media (max-width: 600px)': {
+              fontSize: '1.5rem', // Tamaño ajustado para móviles
+            }
+          }}
+        >
           Sayuri Veronica Panama Segura
         </Typography>
 
-        <Typography variant="h3" color="white" sx={{ fontFamily: "Montserrat, sans-serif", fontWeight: "medium" }}>
+        <Typography
+          variant="h3"
+          color="white"
+          sx={{
+            fontFamily: "Montserrat, sans-serif",
+            fontWeight: "medium",
+            // Reducimos el tamaño de la fuente en dispositivos pequeños
+            '@media (max-width: 600px)': {
+              fontSize: '1rem', // Tamaño ajustado para móviles
+            }
+          }}
+        >
           Desarrolladora Web | Frontend con Angular e Ionic
         </Typography>
+
         <IconButton
           onClick={() => scrollToSection("sobremí")}
           sx={{
             mt: 3,
             color: "white",
             animation: "bounce 2s infinite",
-            fontSize: "3rem"
+            fontSize: "3rem",
+            // Ajustamos el tamaño para dispositivos pequeños
+            '@media (max-width: 600px)': {
+              fontSize: '2rem', // Tamaño más pequeño
+            }
           }}
         >
           <ArrowDownward sx={{ fontSize: 80 }} />
         </IconButton>
-
       </Box>
+
 
       {/* Sobre Mí */}
       <Box id="sobremí" sx={{ minHeight: "100vh", py: 5 }}>
@@ -263,11 +312,23 @@ export default function Portfolio() {
                   Plataforma de Gestión del Sistema de Metrobus
                 </Typography>
                 <Typography variant="body2" color="textSecondary" sx={{ mb: 2 }}>
-                  Una plataforma diseñada para optimizar el sistema de transporte público de la ciudad.
+                  Esta plataforma web fue desarrollada para reemplazar el uso de Excel en la gestión de fallas y reportes del sistema Metrobus. Permite registrar y administrar incidentes, levantar reportes y hacer seguimiento de las fallas en tiempo real. Con una interfaz intuitiva, facilita el control y optimización del mantenimiento de las unidades. Se implementó utilizando React y Material UI en el frontend, con integración a servicios de backend para el almacenamiento y procesamiento de la información.
                 </Typography>
               </CardContent>
             </Card>
+
+            <Box sx={{ textAlign: "center", mt: 2 }}>
+              <a href="https://github.com/sayuri-panama/Proyectos-Frontend" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
+                <IconButton sx={{ fontSize: 30, color: "white", marginRight: 1 }}>
+                  <GitHub />
+                </IconButton>
+                <Typography variant="body2" sx={{ color: "white" }}>
+                  Git de Frontend de Metrobus
+                </Typography>
+              </a>
+            </Box>
           </Grid>
+
 
           {/* Proyecto 2 */}
           <Grid item xs={12} md={6}>
@@ -291,14 +352,27 @@ export default function Portfolio() {
               />
               <CardContent sx={{ textAlign: "center", backgroundColor: "#F3E5F5" }}>
                 <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
-                  Aplicación Móvil de Estimación de Transporte
+                  Aplicación Móvil de estimación de tiempo de la llegada del transporte público de la CDMX
                 </Typography>
                 <Typography variant="body2" color="textSecondary" sx={{ mb: 2 }}>
-                  Una app que ayuda a los usuarios a estimar el tiempo de espera en el transporte público.
+                  Diseñé y desarrollé una aplicación móvil para usuarios en general que usen el transporte público, con el objetivo de proporcionar información en tiempo real sobre las rutas, tiempos de llegada y disponibilidad de unidades. La app fue construida con Ionic y Angular, ofreciendo una experiencia fluida en dispositivos Android e iOS. Se implementó geolocalización y notificaciones push para mejorar la interacción con los usuarios.
                 </Typography>
               </CardContent>
             </Card>
+
+
+            <Box sx={{ textAlign: "center", mt: 2 }}>
+              <a href="https://github.com/sayuri-panama/Proyectos-Frontend/tree/aplicacion-frontend" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
+                <IconButton sx={{ fontSize: 30, color: "white", marginRight: 1 }}>
+                  <GitHub />
+                </IconButton>
+                <Typography variant="body2" sx={{ color: "white" }}>
+                  Git de Frontend de la Aplicación Móvil
+                </Typography>
+              </a>
+            </Box>
           </Grid>
+
         </Grid>
       </Box>
 
@@ -381,7 +455,7 @@ export default function Portfolio() {
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1, mb: 3 }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <LocationOnIcon color="primary" />
-            <Typography>Monterrey, México</Typography>
+            <Typography> Ciudad De Mexico</Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <PhoneIcon color="primary" />
