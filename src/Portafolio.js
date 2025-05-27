@@ -459,7 +459,7 @@ export default function Portfolio() {
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <PhoneIcon color="primary" />
-            <Typography>+52 555 5043 2903</Typography>
+            <Typography>+52 55 5043 2903</Typography>
           </Box>
         </Box>
 
