@@ -459,12 +459,12 @@ export default function Portfolio() {
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <PhoneIcon color="primary" />
-            <Typography>+52 5624 6266 15</Typography>
+            <Typography>+52 555 5043 2903</Typography>
           </Box>
         </Box>
 
         {/* Botón de correo */}
-        <Button variant="contained" color="secondary" href="mailto:sayuri_ps@outlook.es">
+        <Button variant="contained" color="secondary" href="mailto:saypanamasegu@gmail.com">
           Envíame un correo
         </Button>
 
